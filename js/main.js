@@ -130,7 +130,7 @@ ipads.forEach(function (ipad) {
 })
 
 
-
+// footer navigations
 const navigationsEl = document.querySelector('footer .navigations')
 navigations.forEach(function (nav) {
   const mapEl = document.createElement('div')
