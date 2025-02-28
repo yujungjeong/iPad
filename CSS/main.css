@@ -326,27 +326,28 @@ header .inner {
   margin: 0 auto;
   position: relative;
 }
+/* Header / Menu */
 header ul.menu {
-  height: var(--header-height);
   display: flex;
   justify-content: space-between;
+  height: var(--header-height);
 }
 header ul.menu > li {
   display: flex;
   position: relative;
+  cursor: pointer;
   transition: .4s;
 }
-header ul.menu > li.menu-starter { /*미디어 쿼리를 사용해 보이게 할 예정정*/
+header ul.menu > li.menu-starter {
   display: none;
 }
 header ul.menu > li > a {
-  padding:0 10px;
-  font-size: 11px;
   display: flex;
   align-items: center;
-  color:var(--color-font-lightgray);
+  padding: 0 10px;
+  font-size: 11px;
+  color: var(--color-font-lightgray);
   opacity: .8;
-  text-decoration: none;
 }
 header ul.menu > li.apple-logo > a,
 header ul.menu > li.search-starter > a,
@@ -365,10 +366,9 @@ header ul.menu > li.search-starter > a {
 header ul.menu > li.basket-starter > a {
   background-image: url("../images/header_bag.svg");
 }
-header ul.menu > li > a:hover {
+header ul.menu > li:hover > a {
   opacity: 1;
 }
-
 
 /* HEADER / MENU / BASKET  */
 header .basket {
@@ -697,6 +697,10 @@ header.searching .search .autocompletes li {
     height: 100vh;
     background-color: var(--color-black);
   }
+  header.menuing ul.menu > li.basket-starter { /* 바스켓 */
+    opacity: 0;
+    visibility: hidden;
+  }
   header.menuing ul.menu > li.menu-starter span:first-child {
     transform: translate(0, 3.5px) rotate(45deg);
   }
@@ -719,19 +723,19 @@ header.searching .search .autocompletes li {
     width: calc(100% - 55px);
   }
   header.menuing.searching--mobile .search .autocompletes {
-    visibility: visible;
-    opacity: 1;    
     transform: translate(0, 0);
+    visibility: visible;
+    opacity: 1;
   }
   header.menuing.searching--mobile .search .search-canceler {
     visibility: visible;
     opacity: 1;
   }
   header.menuing.searching--mobile .clone-menu {
+    transform: translate(0, 100px);
     visibility: hidden;
     opacity: 0;
-    transform: translate(0, 100px);
-}
+  }
 }
 
 /* NAVIGATION */
